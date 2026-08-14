@@ -16,6 +16,11 @@ export default defineConfig({
     ssr: {
       external: ["@lovable.dev/vite-tanstack-config"],
     },
+    define: {
+      // Disable Lovable error reporting
+      "window.__lovableEvents": "undefined",
+      "window.__lovableReportRuntimeError": "undefined",
+    },
   },
   nitro: {
     preset: "node-server",
