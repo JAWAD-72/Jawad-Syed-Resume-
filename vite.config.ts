@@ -12,4 +12,12 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    ssr: {
+      external: ["@lovable.dev/vite-tanstack-config"],
+    },
+  },
+  nitro: {
+    preset: "node-server",
+  },
 });
