@@ -13,7 +13,7 @@ const PROJECTS = [
     link: "https://github.com/JAWAD-72",
     linkLabel: "View Project",
     shape: "wide" as const,
-    images: ["/images/quickcart-1.png", "/images/quickcart-2.png", "/images/quickcart-3.png", "/images/quickcart-4.png"],
+    images: ["/images/quickcart-1.png.png", "/images/quickcart-2.png.png", "/images/quickcart-3.png.png", "/images/quickcart-4.png.png"],
   },
   {
     n: "02",
@@ -24,7 +24,7 @@ const PROJECTS = [
     link: "https://transform-x.lovable.app",
     linkLabel: "Live Project",
     shape: "tall" as const,
-    images: ["/images/transformx-1.jpeg", "/images/transformx-2.jpeg", "/images/transformx-3.jpeg"],
+    images: ["/images/transformx-1.jpeg.jpeg", "/images/transformx-2.jpeg.jpeg", "/images/transformx-3.jpeg.jpeg"],
   },
   {
     n: "03",
@@ -35,7 +35,7 @@ const PROJECTS = [
     link: "https://github.com/JAWAD-72",
     linkLabel: "View Project",
     shape: "wide" as const,
-    images: ["/images/erp-1.jpg", "/images/erp-2.jpg", "/images/erp-3.jpg"],
+    images: ["/images/erp-1.jpg.jpg", "/images/erp-2.jpg.jpg", "/images/erp-3.jpg.jpg"],
   },
   {
     n: "04",
@@ -46,7 +46,7 @@ const PROJECTS = [
     link: "https://t.me/MeetAtlasBot",
     linkLabel: "Try the Bot",
     shape: "tall" as const,
-    images: ["/images/atlas-1.jpeg", "/images/atlas-2.jpeg", "/images/atlas-3.jpeg"],
+    images: ["/images/atlas-1.jpeg.jpeg", "/images/atlas-2.jpeg.jpeg", "/images/atlas-3.jpeg.jpeg"],
   },
 ];
 
