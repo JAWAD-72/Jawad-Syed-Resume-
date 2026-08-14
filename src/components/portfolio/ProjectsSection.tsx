@@ -3,8 +3,19 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { LiveProjectButton } from "./Buttons";
 
-const IMG = (id: string) =>
-  `https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2F${id}&w=1280&q=85`;
+import quickcart1 from "@/assets/quickcart-1.png.asset.json";
+import quickcart2 from "@/assets/quickcart-2.png.asset.json";
+import quickcart3 from "@/assets/quickcart-3.png.asset.json";
+import quickcart4 from "@/assets/quickcart-4.png.asset.json";
+import transformx1 from "@/assets/transformx-1.jpeg.asset.json";
+import transformx2 from "@/assets/transformx-2.jpeg.asset.json";
+import transformx3 from "@/assets/transformx-3.jpeg.asset.json";
+import erp1 from "@/assets/erp-1.jpg.asset.json";
+import erp2 from "@/assets/erp-2.jpg.asset.json";
+import erp3 from "@/assets/erp-3.jpg.asset.json";
+import atlas1 from "@/assets/atlas-1.jpeg.asset.json";
+import atlas2 from "@/assets/atlas-2.jpeg.asset.json";
+import atlas3 from "@/assets/atlas-3.jpeg.asset.json";
 
 const PROJECTS = [
   {
@@ -13,23 +24,21 @@ const PROJECTS = [
     name: "QuickCart",
     stack: "Next.js · React · Tailwind · Node.js · Express · PostgreSQL (Prisma) · TypeScript",
     desc: "Full-stack e-commerce platform with JWT authentication, vendor & admin dashboards, product CRUD, cart, coupons, reviews, Cloudinary uploads and secure Stripe checkout, with Redux Toolkit + RTK Query state and real-time inventory.",
-    images: [
-      IMG("hf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png"),
-      IMG("hf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png"),
-      IMG("hf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png"),
-    ],
+    link: "https://github.com/JAWAD-72",
+    linkLabel: "View Project",
+    shape: "wide" as const,
+    images: [quickcart1.url, quickcart2.url, quickcart3.url, quickcart4.url],
   },
   {
     n: "02",
     category: "Full-Stack / Web App",
     name: "Transform-X",
     stack: "React · Vite · Tailwind CSS · Shadcn UI · Supabase · PL/pgSQL · TypeScript",
-    desc: "Responsive full-stack application with user authentication, secure data storage and Supabase-powered backend logic, robust PL/pgSQL database workflows and an accessible, high-fidelity Shadcn UI interface.",
-    images: [
-      IMG("hf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png"),
-      IMG("hf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png"),
-      IMG("hf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png"),
-    ],
+    desc: "AI fitness companion with body scans, TDEE and calorie targets, workout splits and meal plans — user authentication, secure data storage and Supabase-powered backend logic behind an accessible dark Shadcn UI interface.",
+    link: "https://transform-x.lovable.app",
+    linkLabel: "Live Project",
+    shape: "tall" as const,
+    images: [transformx1.url, transformx2.url, transformx3.url],
   },
   {
     n: "03",
@@ -37,11 +46,10 @@ const PROJECTS = [
     name: "Library ERP System",
     stack: "Next.js · React · Tailwind CSS · Supabase · JavaScript",
     desc: "Institutional Library ERP that streamlines student registration, financial tracking and automated academic reporting, with a modular admin dashboard, quick-action modals and a real-time serverless Supabase architecture.",
-    images: [
-      IMG("hf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png"),
-      IMG("hf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png"),
-      IMG("hf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png"),
-    ],
+    link: "https://github.com/JAWAD-72",
+    linkLabel: "View Project",
+    shape: "wide" as const,
+    images: [erp1.url, erp2.url, erp3.url],
   },
   {
     n: "04",
@@ -49,13 +57,13 @@ const PROJECTS = [
     name: "ATLAS — Multimodal AI Telegram Assistant",
     stack: "Python · Google Gemini API · Groq Whisper · SQLite · SQLAlchemy · APScheduler · Render",
     desc: "Autonomous multimodal Telegram assistant processing text, voice notes, photos, PDFs and spreadsheets via Groq Whisper and Google Gemini. Integrates real-time stock market data, RSS news feeds and AI deep-research synthesis for context-aware insights, with SQLite/SQLAlchemy memory persistence and timezone-aware APScheduler daily briefings.",
-    images: [
-      IMG("hf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png"),
-      IMG("hf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png"),
-      IMG("hf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png"),
-    ],
+    link: "https://t.me/MeetAtlasBot",
+    linkLabel: "Try the Bot",
+    shape: "tall" as const,
+    images: [atlas1.url, atlas2.url, atlas3.url],
   },
 ];
+
 
 function ProjectCard({
   project,
@@ -108,35 +116,39 @@ function ProjectCard({
               </p>
             </div>
           </div>
-          <LiveProjectButton />
+          <LiveProjectButton label={project.linkLabel} href={project.link} />
         </div>
 
-        <div className="mt-6 flex gap-3">
-          <div className="flex w-[40%] flex-col gap-3">
+        <div
+          className={`mt-6 grid gap-3 ${
+            project.shape === "tall"
+              ? "grid-cols-3"
+              : project.images.length === 4
+                ? "grid-cols-2 sm:grid-cols-4"
+                : "grid-cols-2 sm:grid-cols-3"
+          }`}
+        >
+
+          {project.images.map((src, i) => (
             <img
-              src={project.images[0]}
-              alt={`${project.name} interface preview`}
+              key={src}
+              src={src}
+              alt={`${project.name} screen ${i + 1}`}
               loading="lazy"
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: "clamp(130px, 16vw, 230px)" }}
+              className={`w-full rounded-[24px] border border-[#D7E2EA]/10 object-top sm:rounded-[32px] md:rounded-[40px] ${
+                project.shape === "tall" ? "object-contain" : "object-cover"
+              }`}
+
+              style={{
+                height:
+                  project.shape === "tall"
+                    ? "clamp(220px, 30vw, 460px)"
+                    : "clamp(120px, 15vw, 240px)",
+              }}
             />
-            <img
-              src={project.images[1]}
-              alt={`${project.name} detail preview`}
-              loading="lazy"
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: "clamp(160px, 22vw, 340px)" }}
-            />
-          </div>
-          <div className="w-[60%]">
-            <img
-              src={project.images[2]}
-              alt={`${project.name} full preview`}
-              loading="lazy"
-              className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-            />
-          </div>
+          ))}
         </div>
+
       </motion.div>
     </div>
   );
