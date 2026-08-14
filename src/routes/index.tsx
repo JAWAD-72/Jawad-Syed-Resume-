@@ -4,6 +4,7 @@ import { MarqueeSection } from "@/components/portfolio/MarqueeSection";
 import { AboutSection } from "@/components/portfolio/AboutSection";
 import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
+import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,6 +36,7 @@ function Index() {
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
+      <ExperienceSection />
       <footer
         className="px-6 py-12 text-center text-xs uppercase tracking-widest text-[#D7E2EA]/60 md:px-10"
         style={{ backgroundColor: "#0C0C0C" }}
