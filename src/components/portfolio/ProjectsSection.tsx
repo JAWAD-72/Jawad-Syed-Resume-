@@ -135,7 +135,10 @@ function ProjectCard({
               src={src}
               alt={`${project.name} screen ${i + 1}`}
               loading="lazy"
-              className="w-full rounded-[24px] border border-[#D7E2EA]/10 object-cover object-top sm:rounded-[32px] md:rounded-[40px]"
+              className={`w-full rounded-[24px] border border-[#D7E2EA]/10 object-top sm:rounded-[32px] md:rounded-[40px] ${
+                project.shape === "tall" ? "object-contain" : "object-cover"
+              }`}
+
               style={{
                 height:
                   project.shape === "tall"
