@@ -228,18 +228,6 @@ Integrated real-time stock market data tracking, web news RSS feeds, and AI deep
 
 Implemented stateful user memory persistence using SQLite and SQLAlchemy, along with timezone-aware background scheduling using APScheduler for automated daily briefings. This is a popular design and everything layout but the information and input will be my mind from the CV I am providing you and the project which is not in the CV I have written in the text. Create that.
 
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://jawadsyedresume.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/684b4519-2788-4564-9022-969940d3e5f6).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
 Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
