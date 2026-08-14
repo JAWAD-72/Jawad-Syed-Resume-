@@ -28,10 +28,10 @@ const SKILLS = [
   },
 ];
 
-export function ServicesSection() {
+export function SkillsSection() {
   return (
     <section
-      id="services"
+      id="skills"
       className="relative z-0 rounded-t-[40px] px-5 py-20 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10 md:py-32"
       style={{ backgroundColor: "#FFFFFF" }}
     >
@@ -40,12 +40,12 @@ export function ServicesSection() {
           className="mb-16 text-center font-black uppercase leading-none sm:mb-20 md:mb-28"
           style={{ fontSize: "clamp(3rem, 12vw, 160px)", color: "#0C0C0C" }}
         >
-          Services
+          Skills
         </h2>
       </FadeIn>
 
       <div className="mx-auto max-w-5xl">
-        {SERVICES.map((s, i) => (
+        {SKILLS.map((s, i) => (
           <FadeIn key={s.n} delay={i * 0.1} y={30}>
             <div
               className="flex items-start gap-5 py-8 sm:gap-8 sm:py-10 md:py-12"

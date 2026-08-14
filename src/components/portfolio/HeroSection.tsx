@@ -4,7 +4,7 @@ import { ContactButton } from "./Buttons";
 
 const NAV = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#services" },
+  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "mailto:jawadsyed421@gmail.com" },
 ];
