@@ -116,35 +116,33 @@ function ProjectCard({
               </p>
             </div>
           </div>
-          <LiveProjectButton />
+          <LiveProjectButton label={project.linkLabel} href={project.link} />
         </div>
 
-        <div className="mt-6 flex gap-3">
-          <div className="flex w-[40%] flex-col gap-3">
+        <div
+          className={`mt-6 grid gap-3 ${
+            project.shape === "tall"
+              ? "grid-cols-3"
+              : "grid-cols-2 sm:grid-cols-" + Math.min(project.images.length, 4)
+          }`}
+        >
+          {project.images.map((src, i) => (
             <img
-              src={project.images[0]}
-              alt={`${project.name} interface preview`}
+              key={src}
+              src={src}
+              alt={`${project.name} screen ${i + 1}`}
               loading="lazy"
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: "clamp(130px, 16vw, 230px)" }}
+              className="w-full rounded-[24px] border border-[#D7E2EA]/10 object-cover object-top sm:rounded-[32px] md:rounded-[40px]"
+              style={{
+                height:
+                  project.shape === "tall"
+                    ? "clamp(220px, 30vw, 460px)"
+                    : "clamp(120px, 15vw, 240px)",
+              }}
             />
-            <img
-              src={project.images[1]}
-              alt={`${project.name} detail preview`}
-              loading="lazy"
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: "clamp(160px, 22vw, 340px)" }}
-            />
-          </div>
-          <div className="w-[60%]">
-            <img
-              src={project.images[2]}
-              alt={`${project.name} full preview`}
-              loading="lazy"
-              className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-            />
-          </div>
+          ))}
         </div>
+
       </motion.div>
     </div>
   );
