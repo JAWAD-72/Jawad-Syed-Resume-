@@ -1,6 +1,6 @@
 import { FadeIn } from "./FadeIn";
 
-const SERVICES = [
+const SKILLS = [
   {
     n: "01",
     name: "Full-Stack Development",
