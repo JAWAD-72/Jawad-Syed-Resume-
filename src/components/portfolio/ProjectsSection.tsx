@@ -3,20 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { LiveProjectButton } from "./Buttons";
 
-import quickcart1 from "@/assets/quickcart-1.png.asset.json";
-import quickcart2 from "@/assets/quickcart-2.png.asset.json";
-import quickcart3 from "@/assets/quickcart-3.png.asset.json";
-import quickcart4 from "@/assets/quickcart-4.png.asset.json";
-import transformx1 from "@/assets/transformx-1.jpeg.asset.json";
-import transformx2 from "@/assets/transformx-2.jpeg.asset.json";
-import transformx3 from "@/assets/transformx-3.jpeg.asset.json";
-import erp1 from "@/assets/erp-1.jpg.asset.json";
-import erp2 from "@/assets/erp-2.jpg.asset.json";
-import erp3 from "@/assets/erp-3.jpg.asset.json";
-import atlas1 from "@/assets/atlas-1.jpeg.asset.json";
-import atlas2 from "@/assets/atlas-2.jpeg.asset.json";
-import atlas3 from "@/assets/atlas-3.jpeg.asset.json";
-
 const PROJECTS = [
   {
     n: "01",
@@ -27,7 +13,7 @@ const PROJECTS = [
     link: "https://github.com/JAWAD-72",
     linkLabel: "View Project",
     shape: "wide" as const,
-    images: [quickcart1.url, quickcart2.url, quickcart3.url, quickcart4.url],
+    images: ["/images/quickcart-1.png", "/images/quickcart-2.png", "/images/quickcart-3.png", "/images/quickcart-4.png"],
   },
   {
     n: "02",
@@ -38,7 +24,7 @@ const PROJECTS = [
     link: "https://transform-x.lovable.app",
     linkLabel: "Live Project",
     shape: "tall" as const,
-    images: [transformx1.url, transformx2.url, transformx3.url],
+    images: ["/images/transformx-1.jpeg", "/images/transformx-2.jpeg", "/images/transformx-3.jpeg"],
   },
   {
     n: "03",
@@ -49,7 +35,7 @@ const PROJECTS = [
     link: "https://github.com/JAWAD-72",
     linkLabel: "View Project",
     shape: "wide" as const,
-    images: [erp1.url, erp2.url, erp3.url],
+    images: ["/images/erp-1.jpg", "/images/erp-2.jpg", "/images/erp-3.jpg"],
   },
   {
     n: "04",
@@ -60,7 +46,7 @@ const PROJECTS = [
     link: "https://t.me/MeetAtlasBot",
     linkLabel: "Try the Bot",
     shape: "tall" as const,
-    images: [atlas1.url, atlas2.url, atlas3.url],
+    images: ["/images/atlas-1.jpeg", "/images/atlas-2.jpeg", "/images/atlas-3.jpeg"],
   },
 ];
 
